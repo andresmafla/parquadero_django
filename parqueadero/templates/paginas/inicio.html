@@ -1,0 +1,10 @@
+{% extends "base.html" %} {% block titulo %}Lista de libros{% endblock %}{% block contenido %}
+<br>
+<div class="mb-4 bg-light rounded-3 ">
+    <div class="container-fluid ">
+        <h1 class="display-5 fw-bold">Bienvenidos al parqueadero</h1>
+        <img src="https://lapiedra.com.co/51/zona-parqueadero.jpg" width="600" height="300" alt="">
+        <hr>
+        <a class="btn btn-primary" href="{% url 'carros'%}">Empezar a ingresar carros</a>
+    </div>
+</div>{% endblock %}

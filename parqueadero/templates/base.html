@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>{% block titulo %} {% endblock %} </title>
+</head>
+
+<body>
+    <div class="container">
+        <nav class="navbar navbar-expand navbar-light bg-light">
+            <div class="nav navbar-nav">
+                <a class="navbar-brand" style="padding-left:20px;" href="{% url 'inicio'%}">
+                    <img src="https://us.123rf.com/450wm/djvstock/djvstock1712/djvstock171211649/92441351-estacionamento-com-carros-estacionados-ilustra%C3%A7%C3%A3o-em-vetor-design-colorido.jpg?ver=6" alt="" width="40" height="34" class="d-inline-block align-text-top">parking
+                </a>
+                <a class="nav-item nav-link active" href="{% url 'carros'%}">Registros </a>
+                <a class="nav-item nav-link active" href="{% url 'nosotros'%}">Nosotros </a>
+            </div>
+        </nav>
+        <div class="container">
+            <div class="row">
+                <div class="col-1"></div>
+                <div class="col-10">
+                    {% block contenido %} {% endblock %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js" type="text/javascript"></script>
+    {% block extrajs %} {% endblock extrajs %}
+</body>
+
+</html>

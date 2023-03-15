@@ -1,0 +1,56 @@
+{% extends "base.html" %} {% block titulo %}Lista de libros{% endblock %}{% block contenido %}
+<br>
+<div class="card">
+    <div class="card-header">
+        <a name="" id="" class="btn btn-primary" href="{% url 'crear' %}" role="button">Ingresar carro</a>
+    </div>
+    <div class="card-body">
+        <h4 class="card-title">Lista de carros</h4>
+        <div class="table-responsive">
+            <table class="table table-primary">
+                <thead>
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Placa</th>
+                        <th scope="col">Entrada</th>
+                        <th scope="col">Tipo</th>
+                        <th scope="col">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for carro in Carros %}
+                    <tr class="">
+                        <td scope="row">{{carro.id}}</td>
+                        <td>{{carro.placa}}</td>
+                        <td>{{carro.entrada}}</td>
+                        <td>{{carro.tipo}}</td>
+                        <td>
+                            <button name="" id="" class="btn btn-danger" onclick="abri_modal('{% url 'cobro' carro.id %}',{{carro.id}})">Salida</button>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+    <div class="card-footer text-muted">
+        © 2023 Udenar, Ingeniería de sistemas.
+    </div>
+</div>
+
+<div class="modal fade" id="cobrar" role="dialog">
+
+</div>
+
+{% endblock %} {% block extrajs %}
+<script type="text/javascript">
+    var $ = jQuery.noConflict();
+
+    function abri_modal(url, id) {
+        $('#cobrar').load(url, id, function() {
+            $(this).modal('show');
+        });
+    }
+</script>
+{% endblock extrajs %}
